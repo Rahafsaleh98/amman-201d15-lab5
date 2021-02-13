@@ -53,14 +53,13 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) {
-  //eslint-disable-line
-  
   let h = sum(a, b)[0];
   let g = sum(h, c)[0];
   let x = multiply(a, b)[0];
   let y = multiply(x, c)[0];
-  return [g, y, +a + " and " + b + " and " + c + " sum to " + g + ".", "The product of " + a + " and " + b + " and " + c + " is " + y + "."];
-
+  return [g, y, +a + " and " + b+ " and " + c+ " sum to " + g + ".", "The product of " + a + " and " + b + " and " + c + " is " + y + "."];
+  //eslint-disable-line
+  
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -79,6 +78,20 @@ IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
 
 // Write your code here
+let testArray = [2, 3, 4]; //eslint-disable-line
+function sumArray(sumArray1) {
+  let array2 = "";
+  let y = 0;
+  for(let i=0; i<sumArray1.length; i++){
+  y = sum(y, sumArray1[i])[0];
+  array2 +=  sumArray1[i];
+  if(i!= (sumArray1.length-1))
+  array2 += ",";  
+  }
+  return[y, `${array2} was passed in as an array of numbers, and ${y} is their sum.`];
+  //eslint-disable-line
+}
+
 
 // Here is the test for sumArray(); uncomment it to run it
 
