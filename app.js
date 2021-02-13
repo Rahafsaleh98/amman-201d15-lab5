@@ -97,12 +97,18 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
-  function multiplyArray([a,s,d]) { //eslint-disable-line
-  let r = multiply(a,s)[0];
-  let t = multiply(r,d)[0];
-  return [t ,"The numbers " + a + "," + s + "," + d + " have a product of " + t + "." ];
+function multiplyArray(multArr) {
+  let x = "";
+  let y = 1;
+  for(let i=0; i<multArr.length;i++){
+    y = multiply(y, multArr[i])[0];
+    x+= multArr[i];
+    if(i<multArr.length-1)
+    x+=","
   }
-  multiplyArray([])
+  return[y, `The numbers ${x} have a product of ${y}.`];
+    //eslint-disable-line
+  }
 // Here is the test for multiplyArray(); uncomment it to run it
 testMultiplyArray(testArray);
 
