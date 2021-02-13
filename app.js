@@ -80,12 +80,19 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 let testArray = [2, 3, 4]; //eslint-disable-line
-function sumArray([a,s,d]) {
-  let x = sum(a,s)[0];
-  let y = sum(x,d)[0];
-  return [y ,  a + "," + s + "," + d + " was passed in as an array of numbers, and " + y + " is their sum."]
-}
+function sumArray(sumArray1) {
+  let array2 = "";
+  let y = 0;
+  for(let i=0; i<sumArray1.length; i++){
+  y = sum(y, sumArray1[i])[0];
+  array2 +=  sumArray1[i];
+  if(i!= (sumArray1.length-1))
+  array2 += ",";  
+  }
+  return[y, `${array2} was passed in as an array of numbers, and ${y} is their sum.`];
   //eslint-disable-line
+}
+
 
 // Here is the test for sumArray(); uncomment it to run it
 
